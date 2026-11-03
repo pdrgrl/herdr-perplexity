@@ -1,0 +1,162 @@
+{
+  "id": "root",
+  "type": "row",
+  "theme": {
+    "light": "perplexity-light",
+    "dark": "perplexity-dark"
+  },
+  "background": "canvas",
+  "font": "JetBrains Mono",
+  "font_size": 13.5,
+  "ui_font": "Geist",
+  "terminal_padding": [14, 14],
+  "titlebar": "none",
+  "traffic_lights": [12, 14],
+  "preview": "layouts/perplexity.png",
+  "children": [
+    {
+      "id": "sidebar",
+      "type": "column",
+      "size": {
+        "px": 240
+      },
+      "min": 52,
+      "max": 420,
+      "background": "chrome",
+      "resizable": false,
+      "children": [
+        {
+          "id": "sidebar-content",
+          "type": "block",
+          "content": {
+            "mod": "pplx-sidebar"
+          },
+          "size": {
+            "weight": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "type": "column",
+      "background": "canvas",
+      "size": {
+        "weight": 1
+      },
+      "children": [
+        {
+          "id": "topbar",
+          "type": "block",
+          "content": {
+            "mod": "pplx-topbar"
+          },
+          "size": {
+            "px": 44
+          },
+          "window_drag": true
+        },
+        {
+          "id": "work-body",
+          "type": "row",
+          "padding": [8, 12],
+          "gap": 10,
+          "size": {
+            "weight": 1
+          },
+          "children": [
+            {
+              "id": "main",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "pane": {
+                  "header": {
+                    "content": {
+                      "mod": "pane"
+                    },
+                    "reveal": "always",
+                    "height": 28,
+                    "position": "top"
+                  },
+                  "background": "background",
+                  "border": {
+                    "width": 1,
+                    "color": "border"
+                  },
+                  "focus": {
+                    "width": 1,
+                    "color": "accent"
+                  },
+                  "radius": 8,
+                  "gap": 8,
+                  "lone": true
+                }
+              },
+              "size": {
+                "weight": 3
+              },
+              "min": 320
+            },
+            {
+              "id": "panel",
+              "type": "column",
+              "children": [
+                {
+                  "id": "panel-stack",
+                  "type": "stack",
+                  "children": [
+                    {
+                      "id": "sources",
+                      "type": "block",
+                      "content": {
+                        "mod": "pplx-sources"
+                      }
+                    },
+                    {
+                      "id": "canvas",
+                      "type": "block",
+                      "content": {
+                        "mod": "pplx-canvas"
+                      }
+                    },
+                    {
+                      "id": "files",
+                      "type": "block",
+                      "content": {
+                        "mod": "pplx-files"
+                      }
+                    },
+                    {
+                      "id": "changes",
+                      "type": "block",
+                      "content": {
+                        "mod": "changes"
+                      }
+                    }
+                  ],
+                  "active": "sources"
+                }
+              ],
+              "size": {
+                "weight": 2
+              },
+              "min": 260,
+              "max": 800
+            }
+          ]
+        },
+        {
+          "id": "prompt-dock",
+          "type": "block",
+          "content": {
+            "mod": "pplx-prompt"
+          },
+          "size": {
+            "px": 52
+          }
+        }
+      ]
+    }
+  ]
+}
